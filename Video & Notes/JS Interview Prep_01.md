@@ -7,7 +7,7 @@ The JavaScript **sort() method** is used to sort the elements of an array in pla
 ### Basic Usage
 
 ```javascript
-const fruits = ['banana', 'apple', 'cherry'];
+const fruits = ["banana", "apple", "cherry"];
 fruits.sort();
 // Result: ['apple', 'banana', 'cherry']
 ```
@@ -20,13 +20,13 @@ When sorting numbers, always provide a **compare function** to get correct numer
 
 ```javascript
 const numbers = [100, 20, 5, 42];
-numbers.sort(); 
+numbers.sort();
 // Result: [100, 20, 42, 5]  // Incorrect for numbers[^1_5]
 
-numbers.sort((a, b) => a - b); 
+numbers.sort((a, b) => a - b);
 // Result: [5, 20, 42, 100]  // Correct ascending order[^1_1][^1_2][^1_5]
 
-numbers.sort((a, b) => b - a); 
+numbers.sort((a, b) => b - a);
 // Result: [100, 42, 20, 5]  // Correct descending order[^1_1][^1_2][^1_4]
 ```
 
@@ -34,15 +34,14 @@ numbers.sort((a, b) => b - a);
 - If it returns positive, b is sorted before a.
 - If it returns 0, the positions remain unchanged[^1_1][^1_3][^1_4].
 
-
 ### Sorting an Array of Objects
 
 You can sort objects by a specific property using a custom compare function:
 
 ```javascript
 const users = [
-  { name: 'Bob', age: 30 },
-  { name: 'Alice', age: 25 }
+  { name: "Bob", age: 30 },
+  { name: "Alice", age: 25 },
 ];
 users.sort((a, b) => a.age - b.age);
 // Result: [{ name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }]
@@ -58,7 +57,6 @@ array.sort([compareFunction]);
 
 - `compareFunction` is **optional**. If omitted, array elements are converted to strings and sorted by Unicode code points[^1_2][^1_4][^1_5].
 
-
 ### Important Points
 
 - **Original array is modified**. Use `toSorted()` in modern JavaScript for a non-mutating version[^1_2][^1_4].
@@ -68,27 +66,6 @@ array.sort([compareFunction]);
 The sort() method is widely used for ordering strings, numbers, or even custom object arrays in JavaScript programs[^1_1][^1_2][^1_4][^1_5].
 
 <div style="text-align: center">⁂</div>
-
-[^1_1]: https://mimo.org/glossary/javascript/sort
-
-[^1_2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-
-[^1_3]: https://www.w3schools.com/js/js_array_sort.asp
-
-[^1_4]: https://www.w3schools.com/jsref/jsref_sort.asp
-
-[^1_5]: https://www.geeksforgeeks.org/javascript/javascript-array-sort-method/
-
-[^1_6]: https://stackoverflow.com/questions/1494713/how-does-javascripts-sort-work
-
-[^1_7]: https://www.freecodecamp.org/news/how-does-the-javascript-sort-function-work/
-
-[^1_8]: https://dev.to/alexmercedcoder/introduction-to-sorting-algorithms-in-javascript-b60
-
-[^1_9]: https://www.youtube.com/watch?v=2DATa8qEzWc
-
-[^1_10]: https://dev.to/swasdev4511/sorting-in-javascript-how-it-works--1cb
-
 
 ---
 
@@ -107,7 +84,7 @@ In JavaScript, the array methods **find()**, **every()**, and **some()** are use
 
 ```javascript
 const numbers = [4, 9, 16, 25];
-const firstOver10 = numbers.find(num => num > 10);
+const firstOver10 = numbers.find((num) => num > 10);
 // firstOver10: 16
 ```
 
@@ -124,10 +101,9 @@ The callback function is called with `(element, index, array)`[^2_1][^2_2][^2_5]
 
 ```javascript
 const numbers = [2, 4, 6, 8];
-const allEven = numbers.every(num => num % 2 === 0);
+const allEven = numbers.every((num) => num % 2 === 0);
 // allEven: true
 ```
-
 
 ### 3. some()
 
@@ -140,44 +116,22 @@ const allEven = numbers.every(num => num % 2 === 0);
 
 ```javascript
 const numbers = [1, 3, 5, 8];
-const hasEven = numbers.some(num => num % 2 === 0);
+const hasEven = numbers.some((num) => num % 2 === 0);
 // hasEven: true
 ```
 
 **Summary Table**
 
-
-| Method | Purpose | Returns | Stops on |
-| :-- | :-- | :-- | :-- |
-| find() | First element matching test | Element or undefined | First match |
-| every() | Checks if all elements match | true or false | First false |
-| some() | Checks if any element matches | true or false | First true |
+| Method  | Purpose                       | Returns              | Stops on    |
+| :------ | :---------------------------- | :------------------- | :---------- |
+| find()  | First element matching test   | Element or undefined | First match |
+| every() | Checks if all elements match  | true or false        | First false |
+| some()  | Checks if any element matches | true or false        | First true  |
 
 - All three methods use a callback function with arguments (element, index, array), and an optional `thisArg`.
 - These are core tools for searching or validating arrays in JavaScript.
 
 <div style="text-align: center">⁂</div>
-
-[^2_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-
-[^2_2]: https://www.w3schools.com/jsref/jsref_find.asp
-
-[^2_3]: https://www.geeksforgeeks.org/javascript/javascript-array-find-method/
-
-[^2_4]: https://www.w3schools.com/js/js_array_methods.asp
-
-[^2_5]: https://www.programiz.com/javascript/library/array/find
-
-[^2_6]: https://www.digitalocean.com/community/tutorials/js-array-find-method
-
-[^2_7]: https://www.youtube.com/watch?v=NM8KK0eBvW8
-
-[^2_8]: https://www.w3schools.com/js/js_array_search.asp
-
-[^2_9]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-
-[^2_10]: https://javascript.info/array-methods
-
 
 ---
 
@@ -188,9 +142,9 @@ const hasEven = numbers.some(num => num % 2 === 0);
 - **Purpose:** Fills all elements in an array with a static value, from a start index to an end index.
 - **Mutates array:** Yes, changes the original array.
 - **Syntax:** `array.fill(value, start, end)`
-    - `value` – Value to fill array with.
-    - `start` *(optional)* – Index to start filling (default is 0).
-    - `end` *(optional)* – Index to stop filling (default is array.length).
+  - `value` – Value to fill array with.
+  - `start` _(optional)_ – Index to start filling (default is 0).
+  - `end` _(optional)_ – Index to stop filling (default is array.length).
 - **Example:**
 
 ```javascript
@@ -199,23 +153,21 @@ arr.fill(0, 1, 3); // → [1, 0, 0, 4]
 // Fills positions 1 and 2 with 0.
 ```
 
-
 #### `splice()` Method
 
 - **Purpose:** Adds or removes elements from an array at any position.
 - **Mutates array:** Yes.
 - **Syntax:** `array.splice(start, deleteCount, item1, item2, ...)`
-    - `start` – Index to start changing the array.
-    - `deleteCount` – Number of elements to remove.
-    - `item1, item2, ...` *(optional)* – Elements to add.
+  - `start` – Index to start changing the array.
+  - `deleteCount` – Number of elements to remove.
+  - `item1, item2, ...` _(optional)_ – Elements to add.
 - **Examples:**
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
-arr.splice(2, 1);     // → [1, 2, 4, 5] (removes item at index 2)
-arr.splice(1, 0, 9);  // → [1, 9, 2, 4, 5] (inserts 9 at index 1)
+arr.splice(2, 1); // → [1, 2, 4, 5] (removes item at index 2)
+arr.splice(1, 0, 9); // → [1, 9, 2, 4, 5] (inserts 9 at index 1)
 ```
-
 
 ### 2. Iterables vs Array-Like Objects
 
@@ -227,10 +179,11 @@ arr.splice(1, 0, 9);  // → [1, 9, 2, 4, 5] (inserts 9 at index 1)
 - **Example:**
 
 ```javascript
-for (let char of 'hello') { /* ... */ } // String is iterable
-[...new Set([1,2,3])] // Set is iterable
+for (let char of "hello") {
+  /* ... */
+} // String is iterable
+[...new Set([1, 2, 3])]; // Set is iterable
 ```
-
 
 #### **Array-Like Objects**
 
@@ -241,10 +194,9 @@ for (let char of 'hello') { /* ... */ } // String is iterable
 
 ```javascript
 function foo() {
-  console.log(arguments.length);   // 'arguments' is array-like
+  console.log(arguments.length); // 'arguments' is array-like
 }
 ```
-
 
 ### 3. Sets in JavaScript
 
@@ -262,7 +214,6 @@ ids.add(5);
 ids.add(3); // duplicate, won't be added again
 // ids now contains 3 and 5
 ```
-
 
 #### **Use Cases for Sets**
 
@@ -295,7 +246,7 @@ const clone = Object.assign({}, originalObject);
 
 - The first argument `{}` creates a new empty object.
 - The second argument is the object you want to clone.
-- This copies all *enumerable own properties* from the original object to the new one[^4_1][^4_2][^4_5][^4_6][^4_7].
+- This copies all _enumerable own properties_ from the original object to the new one[^4_1][^4_2][^4_5][^4_6][^4_7].
 
 **Example:**
 
@@ -314,27 +265,6 @@ console.log(clonedUser); // { name: "Alice", age: 25 }
 
 <div style="text-align: center">⁂</div>
 
-[^4_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-
-[^4_2]: https://www.freecodecamp.org/news/clone-an-object-in-javascript/
-
-[^4_3]: https://www.w3schools.com/jsref/jsref_object_assign.asp
-
-[^4_4]: https://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object
-
-[^4_5]: https://www.geeksforgeeks.org/javascript/how-to-clone-a-javascript-object/
-
-[^4_6]: https://javascript.info/object-copy
-
-[^4_7]: https://coreui.io/blog/how-to-clone-an-object-in-javascript/
-
-[^4_8]: https://www.samanthaming.com/tidbits/70-3-ways-to-clone-objects/
-
-[^4_9]: https://www.w3schools.com/js/js_objects.asp
-
-[^4_10]: https://www.youtube.com/watch?v=_fnea_mP0dE
-
-
 ---
 
 # what is optional chaining
@@ -350,6 +280,7 @@ const city = user?.address?.city;
 ```
 
 If `user` or `user.address` is null or undefined, `city` becomes undefined, instead of causing an error[^5_2][^5_3][^5_5][^5_7].
+
 - **Method Calls**:
 
 ```javascript
@@ -357,6 +288,7 @@ const result = user?.getName?.();
 ```
 
 If `user` or `getName` is null/undefined, it returns undefined[^5_1][^5_3][^5_5].
+
 - **Array/Bracket Notation**:
 
 ```javascript
@@ -365,13 +297,11 @@ const value = arr?.[index];
 
 If `arr` is null/undefined, it returns undefined instead of causing an error[^5_5].
 
-
 ### Why Use Optional Chaining?
 
 - **Simplifies code**: No need for repetitive null checks like `if (user && user.address)`.
 - **Avoids runtime errors**: Accessing properties of possibly undefined/null objects doesn’t crash your code; you simply get undefined[^5_2][^5_5].
 - **Works with dynamic property names and function calls**[^5_1][^5_3][^5_5].
-
 
 ### Syntax
 
@@ -379,16 +309,14 @@ If `arr` is null/undefined, it returns undefined instead of causing an error[^5_
 - `obj?.[expr]`
 - `obj.method?.()`
 
-
 ### Example
 
 ```javascript
 const user = { profile: { name: "Alice" } };
 
-console.log(user?.profile?.name);      // "Alice"
-console.log(user?.settings?.theme);    // undefined (no error is thrown)
+console.log(user?.profile?.name); // "Alice"
+console.log(user?.settings?.theme); // undefined (no error is thrown)
 ```
-
 
 ### Important Notes
 
@@ -400,23 +328,6 @@ In summary:
 **Optional chaining (`?.`) makes accessing nested data or methods safer and your code cleaner by automatically returning undefined when something in the chain is missing, instead of throwing an error.**[^5_1][^5_2][^5_3][^5_5][^5_7]
 
 <div style="text-align: center">⁂</div>
-
-[^5_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
-
-[^5_2]: https://www.freecodecamp.org/news/optional-chaining-javascript/
-
-[^5_3]: https://www.geeksforgeeks.org/javascript/javascript-optional-chaining/
-
-[^5_4]: https://dev.to/codeofrelevancy/javascripts-optional-chaining-operator-3pfn
-
-[^5_5]: https://javascript.info/optional-chaining
-
-[^5_6]: https://www.youtube.com/watch?v=RA8RHgzPokk
-
-[^5_7]: https://www.w3schools.com/js/js_2020.asp
-
-[^5_8]: https://forum.freecodecamp.org/t/what-is-the-optional-chaining-operator-and-how-does-it-work/742693
-
 
 ---
 
@@ -432,8 +343,7 @@ In summary:
 
 - **Function declarations** are fully hoisted, so you can call them before their appearance in the code.
 - **var variables:** The declaration is hoisted but not the value/initialization. So, their value is `undefined` until your code runs the assignment.
-- **let/const:** The declaration is hoisted, but accessing them before initialization results in a `ReferenceError` (this time gap is known as the *Temporal Dead Zone*).
-
+- **let/const:** The declaration is hoisted, but accessing them before initialization results in a `ReferenceError` (this time gap is known as the _Temporal Dead Zone_).
 
 ### Example: Variable Hoisting
 
@@ -461,19 +371,18 @@ function sayHi() {
 
 ## Lexical Scoping
 
-**Lexical scoping** (or *static scoping*) describes how variable names are resolved based on where they are written in the source code, not where functions are called. In JavaScript, functions "capture" the scope in which they were defined, not invoked.
+**Lexical scoping** (or _static scoping_) describes how variable names are resolved based on where they are written in the source code, not where functions are called. In JavaScript, functions "capture" the scope in which they were defined, not invoked.
 
 ### How Lexical Scoping Works:
 
 - Inner (nested) functions have access to variables declared in their own scope plus any outer (enclosing) scopes, up to the global scope.
-- The *scope chain* is what decides which variables are available.
-
+- The _scope chain_ is what decides which variables are available.
 
 ### Example: Lexical Scope
 
 ```javascript
 function outer() {
-  let outerVar = 'I am outside!';
+  let outerVar = "I am outside!";
 
   function inner() {
     console.log(outerVar); // Can access outerVar!
@@ -483,7 +392,7 @@ function outer() {
 outer();
 ```
 
-> `inner` can access `outerVar` because of lexical scoping: the *definition* location, not where it's called, determines this[^6_7][^6_8][^6_9][^6_10].
+> `inner` can access `outerVar` because of lexical scoping: the _definition_ location, not where it's called, determines this[^6_7][^6_8][^6_9][^6_10].
 
 #### Another Example:
 
@@ -506,58 +415,17 @@ foo();
 
 ### Summary Table
 
-| Concept | What Happens | Code Example | Output/Consequence |
-| :-- | :-- | :-- | :-- |
-| **Hoisting** | Declarations moved to top of scope | `console.log(x); var x = 1;` | `undefined` |
+| Concept             | What Happens                                  | Code Example                                                                   | Output/Consequence           |
+| :------------------ | :-------------------------------------------- | :----------------------------------------------------------------------------- | :--------------------------- |
+| **Hoisting**        | Declarations moved to top of scope            | `console.log(x); var x = 1;`                                                   | `undefined`                  |
 | **Lexical Scoping** | Scope is defined by where you write functions | `function out() { let x = 1; function in() { console.log(x); } in(); } out();` | `1` (inner can access outer) |
 
 **In plain words:**
 
 - **Hoisting** lets you reference functions/vars before declaring them. But with `var`, they're `undefined` until initialized. With `let`/`const`, referencing them before the line is a ReferenceError due to the Temporal Dead Zone.
-- **Lexical scoping** means inner functions can always "see" outer variables, because their access rights are set when they are *defined* in the code—not when called[^6_1][^6_7][^6_8][^6_9][^6_10].
+- **Lexical scoping** means inner functions can always "see" outer variables, because their access rights are set when they are _defined_ in the code—not when called[^6_1][^6_7][^6_8][^6_9][^6_10].
 
 <div style="text-align: center">⁂</div>
-
-[^6_1]: https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
-
-[^6_2]: https://www.w3schools.com/js/js_hoisting.asp
-
-[^6_3]: https://www.geeksforgeeks.org/javascript/javascript-hoisting/
-
-[^6_4]: https://www.greatfrontend.com/questions/quiz/explain-hoisting
-
-[^6_5]: https://dev.to/rahulvijayvergiya/hoisting-lexical-scope-and-temporal-dead-zone-in-javascript-55pg
-
-[^6_6]: https://www.freecodecamp.org/news/what-is-hoisting-in-javascript-3/
-
-[^6_7]: https://www.greatfrontend.com/questions/quiz/explain-the-concept-of-lexical-scoping
-
-[^6_8]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures
-
-[^6_9]: https://www.techtarget.com/whatis/definition/lexical-scoping-static-scoping
-
-[^6_10]: https://www.educative.io/answers/lexical-scope-in-javascript
-
-[^6_11]: https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript
-
-[^6_12]: https://www.freecodecamp.org/news/scope-closures-and-hoisting-in-javascript/
-
-[^6_13]: https://www.youtube.com/watch?v=EvfRXyKa_GI
-
-[^6_14]: https://www.geeksforgeeks.org/javascript/scoping-hoisting-javascript/
-
-[^6_15]: https://www.programiz.com/javascript/hoisting
-
-[^6_16]: https://www.linkedin.com/pulse/how-closure-different-from-lexical-scoping-javascript-asif-ali
-
-[^6_17]: https://www.w3schools.com/js/js_scope.asp
-
-[^6_18]: https://deepkiran.hashnode.dev/understanding-hoisting-lexical-environment-and-block-scope-in-javascript-with-var-let-and-const-variables
-
-[^6_19]: https://www.geeksforgeeks.org/javascript/lexical-scope-in-javascript/
-
-[^6_20]: https://daily.dev/blog/concepts-in-javascript-understanding-scope
-
 
 ---
 
@@ -581,7 +449,6 @@ console.log(a); // ReferenceError: a is not defined
 
 Here, `a` is only accessible inside the `example` function and not outside[^7_1][^7_2][^7_3].
 
-
 ## Block Scope
 
 - **Definition:** Variables are only accessible within the nearest set of curly braces `{...}` in which they are declared (like within an `if` statement, loop, or a function block).
@@ -602,15 +469,14 @@ console.log(z); // 4 (z is function-scoped, not block-scoped)
 
 Here, `x` and `y` are block-scoped and not accessible outside the `if` block, but `z` (declared with `var`) leaks out to the surrounding function or global scope[^7_1][^7_2][^7_4][^7_3][^7_5].
 
-
 ## Key Differences
 
-| Feature | Function Scope | Block Scope |
-| :-- | :-- | :-- |
-| Associated With | `var` (and all types inside a function) | `let`, `const` (ES6+) |
-| Visibility | Whole function | Only inside the `{ ... }` block |
+| Feature              | Function Scope                                      | Block Scope                                   |
+| :------------------- | :-------------------------------------------------- | :-------------------------------------------- |
+| Associated With      | `var` (and all types inside a function)             | `let`, `const` (ES6+)                         |
+| Visibility           | Whole function                                      | Only inside the `{ ... }` block               |
 | Example (`if` block) | Accessible outside the block if declared with `var` | Not accessible if declared with `let`/`const` |
-| Introduced in | JavaScript (ES3, always existed) | ES6 (2015), with `let`/`const` |
+| Introduced in        | JavaScript (ES3, always existed)                    | ES6 (2015), with `let`/`const`                |
 
 ### Summary
 
@@ -620,23 +486,6 @@ Here, `x` and `y` are block-scoped and not accessible outside the `if` block, bu
 Block scope helps prevent accidental variable leaks and overwrites, especially in loops and conditionals, while function scope is broader and can create unintended behavior in complex functions[^7_1][^7_4][^7_3][^7_5].
 
 <div style="text-align: center">⁂</div>
-
-[^7_1]: https://www.w3schools.com/js/js_scope.asp
-
-[^7_2]: https://www.greatfrontend.com/questions/quiz/explain-the-difference-between-global-scope-function-scope-and-block-scope
-
-[^7_3]: https://developer.mozilla.org/en-US/docs/Glossary/Scope
-
-[^7_4]: https://www.freecodecamp.org/news/scope-in-javascript-global-vs-local-vs-block-scope/
-
-[^7_5]: https://www.youtube.com/watch?v=IaTztAtoNEY
-
-[^7_6]: https://blog.coolhead.in/difference-between-function-scope-and-block-scope-in-javascript
-
-[^7_7]: https://www.reddit.com/r/typescript/comments/1edathi/blockscope_vs_function_scope/
-
-[^7_8]: https://stackoverflow.com/questions/21772317/difference-between-function-level-scope-and-block-level-scope
-
 
 ---
 
@@ -655,7 +504,6 @@ function functionName(...restParameter) {
 - The rest parameter must be the last parameter in the function definition.
 - Only one rest parameter is allowed per function[^8_1][^8_2].
 
-
 ### Example 1: Simple Sum Function
 
 ```javascript
@@ -667,9 +515,9 @@ function sum(...numbers) {
   return total;
 }
 
-console.log(sum(1, 2));           // 3
-console.log(sum(1, 2, 3));        // 6
-console.log(sum(1, 2, 3, 4, 5));  // 15
+console.log(sum(1, 2)); // 3
+console.log(sum(1, 2, 3)); // 6
+console.log(sum(1, 2, 3, 4, 5)); // 15
 ```
 
 Here, `numbers` is an array that contains all the arguments passed to the function[^8_1][^8_2][^8_4][^8_5].
@@ -678,11 +526,11 @@ Here, `numbers` is an array that contains all the arguments passed to the functi
 
 ```javascript
 function printName(first, ...others) {
-  console.log(first);    // first argument
-  console.log(others);   // array of remaining arguments
+  console.log(first); // first argument
+  console.log(others); // array of remaining arguments
 }
 
-printName('Alice', 'Bob', 'Charlie', 'David');
+printName("Alice", "Bob", "Charlie", "David");
 // Output:
 // Alice
 // [ 'Bob', 'Charlie', 'David' ]
@@ -699,23 +547,6 @@ In this example, the first parameter gets the first argument (`'Alice'`), and `o
 Use the rest parameter (`...param`) to make flexible, variadic functions that can handle any number of arguments, with all extra values automatically collected into an array.
 
 <div style="text-align: center">⁂</div>
-
-[^8_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
-
-[^8_2]: https://www.geeksforgeeks.org/javascript/javascript-rest-operator/
-
-[^8_3]: https://javascript.info/rest-parameters-spread
-
-[^8_4]: https://www.w3schools.com/js/js_function_parameters.asp
-
-[^8_5]: https://www.codecademy.com/resources/docs/javascript/rest-parameters
-
-[^8_6]: https://playcode.io/javascript/rest-parameters
-
-[^8_7]: https://www.youtube.com/watch?v=ahwR1D_GAfc
-
-[^8_8]: https://www.w3schools.com/js/tryit.asp?filename=tryjs_rest
-
 
 ---
 
@@ -737,25 +568,25 @@ let myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-
 ### Core Promise Methods
 
 Here are the most important static methods for working with multiple promises or controlling their behavior:
 
 #### 1. `Promise.all()`
 
-- **Use:** Waits for all promises in an iterable to be fulfilled. If *any* promise rejects, it returns a rejected promise immediately.
-- **Returns:** A new promise resolved with an array of results (order preserved), or rejected with the reason of the *first* rejection[^9_5][^9_6].
+- **Use:** Waits for all promises in an iterable to be fulfilled. If _any_ promise rejects, it returns a rejected promise immediately.
+- **Returns:** A new promise resolved with an array of results (order preserved), or rejected with the reason of the _first_ rejection[^9_5][^9_6].
 - **Example:**
 
 ```javascript
-Promise.all([p1, p2, p3]).then(values => {
-  // All fulfilled: values is [v1, v2, v3]
-}).catch(error => {
-  // At least one rejected: error
-});
+Promise.all([p1, p2, p3])
+  .then((values) => {
+    // All fulfilled: values is [v1, v2, v3]
+  })
+  .catch((error) => {
+    // At least one rejected: error
+  });
 ```
-
 
 #### 2. `Promise.allSettled()`
 
@@ -764,41 +595,42 @@ Promise.all([p1, p2, p3]).then(values => {
 - **Example:**
 
 ```javascript
-Promise.allSettled([p1, p2]).then(results => {
+Promise.allSettled([p1, p2]).then((results) => {
   // results: [{status: "fulfilled", value: ...}, {status: "rejected", reason: ...}]
 });
 ```
 
-
 #### 3. `Promise.any()`
 
-- **Use:** Fulfills as soon as *any* promise in the iterable fulfills. Ignores rejections unless all fail, in which case it rejects with an `AggregateError`[^9_9][^9_10].
+- **Use:** Fulfills as soon as _any_ promise in the iterable fulfills. Ignores rejections unless all fail, in which case it rejects with an `AggregateError`[^9_9][^9_10].
 - **Returns:** A promise resolved with the value of the first fulfilled promise, or rejected if all fail.
 - **Example:**
 
 ```javascript
-Promise.any([p1, p2, p3]).then(value => {
-  // First fulfilled value
-}).catch(error => {
-  // All rejected cases (AggregateError)
-});
+Promise.any([p1, p2, p3])
+  .then((value) => {
+    // First fulfilled value
+  })
+  .catch((error) => {
+    // All rejected cases (AggregateError)
+  });
 ```
-
 
 #### 4. `Promise.race()`
 
-- **Use:** Settles as soon as *the first* promise in the iterable settles (fulfilled or rejected)[^9_11][^9_12].
+- **Use:** Settles as soon as _the first_ promise in the iterable settles (fulfilled or rejected)[^9_11][^9_12].
 - **Returns:** A new promise resolved/rejected with the outcome of the first settled promise.
 - **Example:**
 
 ```javascript
-Promise.race([p1, p2, p3]).then(value => {
-  // First settled
-}).catch(error => {
-  // First to reject, if that's what happens
-});
+Promise.race([p1, p2, p3])
+  .then((value) => {
+    // First settled
+  })
+  .catch((error) => {
+    // First to reject, if that's what happens
+  });
 ```
-
 
 #### 5. `Promise.resolve()`
 
@@ -806,9 +638,8 @@ Promise.race([p1, p2, p3]).then(value => {
 - **Example:**
 
 ```javascript
-Promise.resolve(42).then(val => console.log(val)); // 42
+Promise.resolve(42).then((val) => console.log(val)); // 42
 ```
-
 
 #### 6. `Promise.reject()`
 
@@ -816,9 +647,8 @@ Promise.resolve(42).then(val => console.log(val)); // 42
 - **Example:**
 
 ```javascript
-Promise.reject("Error!").catch(err => console.log(err)); // Error!
+Promise.reject("Error!").catch((err) => console.log(err)); // Error!
 ```
-
 
 #### 7. `Promise.try()`
 
@@ -829,7 +659,6 @@ Promise.reject("Error!").catch(err => console.log(err)); // Error!
 Promise.resolve().then(() => maybeThrows()); // catches sync errors
 ```
 
-
 #### 8. `Promise.withResolvers()`
 
 - **Use:** Returns an object containing `{ promise, resolve, reject }` — giving you manual control over a new promise and its resolvers. This is safer and less error-prone than manual assignment. As of 2024, it is available in modern browsers and Node.js (may require feature flag)[^9_17][^9_18].
@@ -838,70 +667,28 @@ Promise.resolve().then(() => maybeThrows()); // catches sync errors
 ```javascript
 const { promise, resolve, reject } = Promise.withResolvers();
 // ... somewhere else
-resolve('result');
+resolve("result");
 // ... or
-reject('error');
+reject("error");
 ```
 
 With this, you can "externally" resolve or reject a promise, which is useful in event-driven or reactive programming.
 
 **Summary Table of Promise Methods**
 
-
-| Method | What it does |
-| :-- | :-- |
-| Promise.all() | Resolves when *all* promises are fulfilled, or rejects at first failure. |
-| Promise.allSettled() | Resolves when *all* settle, with array of all outcomes. |
-| Promise.any() | Resolves when *any* promise fulfills, rejects if *all* fail. |
-| Promise.race() | Resolves/rejects as soon as the first input settles. |
-| Promise.resolve() | Creates a promise already fulfilled with a value. |
-| Promise.reject() | Creates a promise already rejected with a reason. |
-| Promise.withResolvers() | Gives a new promise plus separate resolve/reject functions. |
+| Method                  | What it does                                                             |
+| :---------------------- | :----------------------------------------------------------------------- |
+| Promise.all()           | Resolves when _all_ promises are fulfilled, or rejects at first failure. |
+| Promise.allSettled()    | Resolves when _all_ settle, with array of all outcomes.                  |
+| Promise.any()           | Resolves when _any_ promise fulfills, rejects if _all_ fail.             |
+| Promise.race()          | Resolves/rejects as soon as the first input settles.                     |
+| Promise.resolve()       | Creates a promise already fulfilled with a value.                        |
+| Promise.reject()        | Creates a promise already rejected with a reason.                        |
+| Promise.withResolvers() | Gives a new promise plus separate resolve/reject functions.              |
 
 Use these methods to handle complex asynchronous logic in a robust and readable way in modern JavaScript development[^9_1][^9_3][^9_17].
 
 <div style="text-align: center">⁂</div>
-
-[^9_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-[^9_2]: https://www.w3schools.com/js/js_promise.asp
-
-[^9_3]: https://www.w3schools.com/jsref/jsref_obj_promise.asp
-
-[^9_4]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
-
-[^9_5]: https://www.geeksforgeeks.org/javascript/javascript-promise-all-method/
-
-[^9_6]: https://www.w3schools.com/jsref/jsref_promise_all.asp
-
-[^9_7]: https://www.w3schools.com/jsref/jsref_promise_allsettled.asp
-
-[^9_8]: https://www.geeksforgeeks.org/javascript/javascript-promise-allsettled-method/
-
-[^9_9]: https://www.w3schools.com/jsref/jsref_promise_any.asp
-
-[^9_10]: https://www.geeksforgeeks.org/javascript/javascript-promise-any-method/
-
-[^9_11]: https://www.geeksforgeeks.org/javascript/javascript-promise-race-method/
-
-[^9_12]: https://www.w3schools.com/jsref/jsref_promise_race.asp
-
-[^9_13]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
-
-[^9_14]: https://www.w3schools.com/jsref/jsref_promise_resolve.asp
-
-[^9_15]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
-
-[^9_16]: https://www.w3schools.com/jsref/jsref_promise_reject.asp
-
-[^9_17]: https://mikevdv.dev/blog/2024-03-30-promise-withresolvers-in-javascript
-
-[^9_18]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers
-
-[^9_19]: https://javascript.info/promise-basics
-
-[^9_20]: https://www.joshwcomeau.com/javascript/promises/
-
 
 ---
 
@@ -909,82 +696,78 @@ Use these methods to handle complex asynchronous logic in a robust and readable 
 
 Here are API usage examples for Promise.race(), Promise.any(), Promise.all(), and Promise.allSettled(), using typical API calls with fetch. Each illustrates how these methods behave with asynchronous HTTP requests.
 
-### 1. Promise.race(): Settles when the *first* promise settles (fulfilled or rejected).
+### 1. Promise.race(): Settles when the _first_ promise settles (fulfilled or rejected).
 
 ```javascript
-const api1 = fetch('https://api.example.com/data1');
-const api2 = fetch('https://api.example.com/data2');
+const api1 = fetch("https://api.example.com/data1");
+const api2 = fetch("https://api.example.com/data2");
 
 Promise.race([api1, api2])
-  .then(response => response.json())
-  .then(data => {
-    console.log('First API responded:', data);
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("First API responded:", data);
   })
-  .catch(error => {
-    console.error('First API failed or rejected:', error);
+  .catch((error) => {
+    console.error("First API failed or rejected:", error);
   });
 ```
 
 - Whichever fetch settles (resolved or error) first, that's the outcome you get. This is useful if you want the fastest response or implement a request timeout[^10_1][^10_5][^10_6].
 
-
-### 2. Promise.any(): Resolves with the *first fulfilled* promise (ignores rejections unless all fail).
+### 2. Promise.any(): Resolves with the _first fulfilled_ promise (ignores rejections unless all fail).
 
 ```javascript
-const api1 = fetch('https://api.example.com/data1');
-const api2 = fetch('https://api.example.com/data2');
-const api3 = fetch('https://broken-api-url.com/dataX'); // Intentionally broken
+const api1 = fetch("https://api.example.com/data1");
+const api2 = fetch("https://api.example.com/data2");
+const api3 = fetch("https://broken-api-url.com/dataX"); // Intentionally broken
 
 Promise.any([api1, api2, api3])
-  .then(response => response.json())
-  .then(data => {
-    console.log('First successful API response:', data);
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("First successful API response:", data);
   })
-  .catch(aggregateError => {
-    console.error('All APIs failed:', aggregateError);
+  .catch((aggregateError) => {
+    console.error("All APIs failed:", aggregateError);
   });
 ```
 
-- Rejects only if *all* promises reject; otherwise, resolves with the value of the first to fulfill (regardless of their speeds)[^10_5].
+- Rejects only if _all_ promises reject; otherwise, resolves with the value of the first to fulfill (regardless of their speeds)[^10_5].
 
-
-### 3. Promise.all(): Resolves when *all* promises fulfill, rejects at the first failure.
+### 3. Promise.all(): Resolves when _all_ promises fulfill, rejects at the first failure.
 
 ```javascript
-const api1 = fetch('https://api.example.com/data1');
-const api2 = fetch('https://api.example.com/data2');
+const api1 = fetch("https://api.example.com/data1");
+const api2 = fetch("https://api.example.com/data2");
 
 Promise.all([api1, api2])
-  .then(responses => Promise.all(responses.map(r => r.json())))
-  .then(dataArr => {
-    console.log('All APIs succeeded:', dataArr);
+  .then((responses) => Promise.all(responses.map((r) => r.json())))
+  .then((dataArr) => {
+    console.log("All APIs succeeded:", dataArr);
   })
-  .catch(error => {
-    console.error('At least one API call failed:', error);
+  .catch((error) => {
+    console.error("At least one API call failed:", error);
   });
 ```
 
 - This is ideal when you need every request to succeed before proceeding (e.g., data aggregation). If any fetch fails, the overall promise rejects[^10_7][^10_5].
 
-
 ### 4. Promise.allSettled(): Resolves when all promises settle, with an array of results reflecting both fulfilled and rejected.
 
 ```javascript
-const api1 = fetch('https://api.example.com/data1');
-const api2 = fetch('https://broken-api-url.com/dataX'); // Intentionally broken
+const api1 = fetch("https://api.example.com/data1");
+const api2 = fetch("https://broken-api-url.com/dataX"); // Intentionally broken
 
-Promise.allSettled([api1, api2])
-  .then(results => {
-    results.forEach((result, idx) => {
-      if (result.status === "fulfilled") {
-        result.value.json().then(data =>
-          console.log(`API ${idx + 1} fulfilled:`, data)
-        );
-      } else {
-        console.error(`API ${idx + 1} failed:`, result.reason);
-      }
-    });
+Promise.allSettled([api1, api2]).then((results) => {
+  results.forEach((result, idx) => {
+    if (result.status === "fulfilled") {
+      result.value
+        .json()
+        .then((data) => console.log(`API ${idx + 1} fulfilled:`, data));
+    } else {
+      console.error(`API ${idx + 1} failed:`, result.reason);
+    }
   });
+});
 ```
 
 - Use this when you want all results, successes and failures, without short-circuiting[^10_7].
@@ -1000,25 +783,6 @@ Adapt these for your specific use case by swapping in your API URLs and handling
 
 <div style="text-align: center">⁂</div>
 
-[^10_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
-
-[^10_2]: https://www.w3schools.com/jsref/jsref_promise_race.asp
-
-[^10_3]: https://javascript.info/promise-api
-
-[^10_4]: https://www.javascripttutorial.net/javascript-promise-race/
-
-[^10_5]: https://dev.to/shameel/javascript-promise-all-vs-allsettled-and-race-vs-any-3foj
-
-[^10_6]: https://www.educative.io/answers/how-to-implement-a-request-timeout-using-the-promiserace-method
-
-[^10_7]: https://www.linkedin.com/pulse/promise-apis-all-allsettled-race-any-interview-questions-tejas-musale-kesif
-
-[^10_8]: https://stackoverflow.com/questions/74331904/racing-javascript-promises-while-ensuring-all-promises-complete
-
-[^10_9]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-
 ---
 
 ### `call`, `apply`, and `bind` in JavaScript (Interview Prep)
@@ -1027,20 +791,19 @@ These three methods belong to JavaScript function objects and are used to **cont
 
 ## 1. `call()`
 
-- **Purpose:** Invokes a function, explicitly setting its `this` value and passing *arguments individually*.
+- **Purpose:** Invokes a function, explicitly setting its `this` value and passing _arguments individually_.
 - **Syntax:** `func.call(thisArg, arg1, arg2, ...)`
 - **Example:**
 
 ```javascript
 function greet(msg) {
-  console.log(msg + ', ' + this.name);
+  console.log(msg + ", " + this.name);
 }
-const user = { name: 'Alice' };
-greet.call(user, 'Hello'); // Hello, Alice
+const user = { name: "Alice" };
+greet.call(user, "Hello"); // Hello, Alice
 ```
 
     - `greet` runs as if it’s a method of `user`, so inside `greet`, `this.name` refers to `"Alice"`.
-
 
 ## 2. `apply()`
 
@@ -1057,7 +820,6 @@ console.log(sum.apply(ctx, [1, 2])); // 6
 ```
 
     - Use `apply` when arguments are coming as an array (e.g., spreading arrays into functions before ES6).
-
 
 ## 3. `bind()`
 
@@ -1076,14 +838,13 @@ console.log(double()); // 10
 
     - `multiply` is "bound" to `obj`, so `this.x` always refers to `5`, and `factor` is always `2` in `double()`.
 
-
 ### Key Differences Table
 
-|  | `.call()` | `.apply()` | `.bind()` |
-| :-- | :-- | :-- | :-- |
-| Executes? | **Immediately** | **Immediately** | **Returns new function** |
-| Args | Individual arguments | Arguments as an array | Individual (can pre-fill) |
-| Use case | Method borrowing, custom `this` | When args are arrays, variadic | Event handlers, partial application, delayed execution |
+|           | `.call()`                       | `.apply()`                     | `.bind()`                                              |
+| :-------- | :------------------------------ | :----------------------------- | :----------------------------------------------------- |
+| Executes? | **Immediately**                 | **Immediately**                | **Returns new function**                               |
+| Args      | Individual arguments            | Arguments as an array          | Individual (can pre-fill)                              |
+| Use case  | Method borrowing, custom `this` | When args are arrays, variadic | Event handlers, partial application, delayed execution |
 
 ### Interview Insights \& Tips
 
@@ -1093,20 +854,18 @@ console.log(double()); // 10
 - **Method Borrowing:** You can make one object use a method from another:
 
 ```javascript
-const arrLike = { 0: 'hi', 1: 'bye', length: 2 };
-Array.prototype.join.call(arrLike, ', '); // "hi, bye"
+const arrLike = { 0: "hi", 1: "bye", length: 2 };
+Array.prototype.join.call(arrLike, ", "); // "hi, bye"
 ```
-
 
 #### Bonus: ES6 Spread Operator
 
 - With ES6, `[...arr]` can replace many uses of `apply` for spreading arrays into functions:
 
 ```javascript
-Math.max.apply(null, [1, 2, 3]);        // old
-Math.max(...[1, 2, 3]);                 // modern
+Math.max.apply(null, [1, 2, 3]); // old
+Math.max(...[1, 2, 3]); // modern
 ```
-
 
 **In conclusion:**
 
@@ -1123,54 +882,61 @@ In JavaScript, the **this** keyword refers to the object that is executing the c
 ### How **this** Works
 
 - **In a method (object property function):**
-`this` refers to the object the method belongs to.
+  `this` refers to the object the method belongs to.
 
 ```javascript
-const person = { name: 'Alex', greet() { console.log(this.name); }};
+const person = {
+  name: "Alex",
+  greet() {
+    console.log(this.name);
+  },
+};
 person.greet(); // "Alex"
 ```
 
 - **In a standalone function (global context):**
-    - In non-strict mode: `this` refers to the global object (e.g., `window` in browsers).
-    - In strict mode: `this` is `undefined`.
+  - In non-strict mode: `this` refers to the global object (e.g., `window` in browsers).
+  - In strict mode: `this` is `undefined`.
 
 ```javascript
-function show() { console.log(this); }
+function show() {
+  console.log(this);
+}
 show(); // window (non-strict), undefined (strict mode)
 ```
 
 - **With call/apply/bind:**
-You can explicitly set the value of `this`.
+  You can explicitly set the value of `this`.
 
 ```javascript
-function say() { console.log(this.val); }
-say.call({ val: 'hi' }); // "hi"
+function say() {
+  console.log(this.val);
+}
+say.call({ val: "hi" }); // "hi"
 ```
 
 - **Arrow functions:**
-`this` is *lexically inherited*—it takes `this` from the outer (parent) scope, not from its own invocation[^12_1][^12_4].
+  `this` is _lexically inherited_—it takes `this` from the outer (parent) scope, not from its own invocation[^12_1][^12_4].
 
 ```javascript
 const obj = {
   val: 10,
-  method: function() {
+  method: function () {
     const arrow = () => console.log(this.val);
     arrow(); // 10
-  }
+  },
 };
 obj.method();
 ```
 
 - **In event handlers:**
-`this` refers to the DOM element that received the event.
-
+  `this` refers to the DOM element that received the event.
 
 ### Key Points
 
-- **Dynamic value:** Depends on *how* the function is called, not just where it’s written.
+- **Dynamic value:** Depends on _how_ the function is called, not just where it’s written.
 - Use `bind`, `call`, or `apply` to control or change `this` for a specific function call.
 - Arrow functions do not have their own `this`; they inherit it from their defining scope.
-
 
 ### Why it matters (in interviews)
 
@@ -1182,31 +948,12 @@ For further reading and multiple examples, see MDN and W3Schools on the `this` k
 
 <div style="text-align: center">⁂</div>
 
-[^12_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
-
-[^12_2]: https://www.w3schools.com/js/js_this.asp
-
-[^12_3]: https://www.geeksforgeeks.org/javascript/javascript-this-keyword/
-
-[^12_4]: https://www.almabetter.com/bytes/tutorials/javascript/this-keyword-in-javascript
-
-[^12_5]: https://www.freecodecamp.org/news/the-javascript-this-keyword-explained-with-examples/
-
-[^12_6]: https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-this-keyword
-
-[^12_7]: https://web.dev/learn/javascript/functions/this
-
-[^12_8]: https://www.youtube.com/watch?v=cwChC4BQF0Q
-
-[^12_9]: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
-
-
 ---
 
 # // every time we add a method in userMethods and then take its referrence in createUser , it will be an disaster to add method everytime , sometime we can forget to add it so we will make a trick
 
 // we will create user object taking proto of userMethod
-// then while calling the method in user , if there is no method in user then javascript will search the method in its __proto__
+// then while calling the method in user , if there is no method in user then javascript will search the method in its **proto**
 const userMethods={
     about : function(){
         return `${this.firstName} is ${this.age} years old`;
@@ -1216,14 +963,14 @@ const userMethods={
     }
 }
 function createUser(firstName , lastName,email,age,address){
-    const user=Object.create(userMethods);  //****imp line of the century*/
+    const user=Object.create(userMethods);  //\*_\*\*imp line of the century_/
     user.firstName=firstName;
     user.lastName=lastName;
     user.email=email;
     user.age=age;
     user.address=address;
-   
-    return user;
+
+return user;
 }
 
 const user= createUser("suvojit","chatterjee","suvojit@gmail.com",22,"ads");
@@ -1249,52 +996,55 @@ Instead, you'd rather have all users “share” the same method references—so
 
 ```javascript
 const userMethods = {
-  about: function() {
+  about: function () {
     return `${this.firstName} is ${this.age} years old`;
   },
-  is18: function() {
+  is18: function () {
     return this.age >= 18;
-  }
-}
+  },
+};
 ```
 
 - Here, `userMethods` is a simple object holding all methods you want every user to use.
-- These methods refer to `this`, which means they will work on *any* user object that uses them as methods!
-
+- These methods refer to `this`, which means they will work on _any_ user object that uses them as methods!
 
 ### 2. **User Factory Function** (`createUser`)
 
 ```javascript
 function createUser(firstName, lastName, email, age, address) {
-  const user = Object.create(userMethods);  // << KEY LINE
+  const user = Object.create(userMethods); // << KEY LINE
   user.firstName = firstName;
   user.lastName = lastName;
   user.email = email;
   user.age = age;
   user.address = address;
-  
+
   return user;
 }
 ```
 
 - **Object.create(userMethods):**
-    - This creates a new, empty object (`user`), **whose prototype is `userMethods`**.
-    - This means if you try to access a property (like `about`) that's not found directly on `user`, JavaScript will “look up the chain” and find `about` on `userMethods`.
-    - This is also called **delegation**: if the object (`user`) can’t handle a method, its prototype (`userMethods`) will.
+  - This creates a new, empty object (`user`), **whose prototype is `userMethods`**.
+  - This means if you try to access a property (like `about`) that's not found directly on `user`, JavaScript will “look up the chain” and find `about` on `userMethods`.
+  - This is also called **delegation**: if the object (`user`) can’t handle a method, its prototype (`userMethods`) will.
 - You assign the data properties (firstName, etc) to each new user.
 - The **methods are not copied:** all users just "see" and use the methods from `userMethods`.
-
 
 ### 3. **Creating Users**
 
 ```javascript
-const user  = createUser("suvojit", "chatterjee", "suvojit@gmail.com", 22, "ads");
+const user = createUser(
+  "suvojit",
+  "chatterjee",
+  "suvojit@gmail.com",
+  22,
+  "ads"
+);
 const user1 = createUser("sam", "chatterjee", "suvojit@gmail.com", 28, "ads");
 const user2 = createUser("suvo", "chatterjee", "suvojit@gmail.com", 2, "ads");
 ```
 
-- Each of these is a unique object holding individual user data, but *sharing* the methods in `userMethods`.
-
+- Each of these is a unique object holding individual user data, but _sharing_ the methods in `userMethods`.
 
 ### 4. **How Methods Work**
 
@@ -1313,8 +1063,7 @@ console.log(user2, user2.is18());
 This means:
 
 - **No method copying or forgetting:** All methods are always available, so you never forget to “add” a method—just define it once.
-- **Easy maintenance:** Add more methods to `userMethods`, and *all* user objects get access automatically.
-
+- **Easy maintenance:** Add more methods to `userMethods`, and _all_ user objects get access automatically.
 
 ### **Why is this important?**
 
@@ -1322,14 +1071,13 @@ This means:
 - **DRY (Don’t Repeat Yourself):** Add or update methods in one place.
 - **Core of ES5 OOP:** This pattern is the basis of JavaScript’s object system. Modern classes (ES6) use the exact same idea internally.
 
-
 ## **Summary Table**
 
-| Concept | How Used in This Code |
-| :-- | :-- |
-| Prototype | Each user’s prototype is `userMethods` |
-| Method Lookup | Calls to `user.is18()` delegate to `userMethods.is18` |
-| Object.create() | Key trick: sets prototype without copying methods |
+| Concept         | How Used in This Code                                 |
+| :-------------- | :---------------------------------------------------- |
+| Prototype       | Each user’s prototype is `userMethods`                |
+| Method Lookup   | Calls to `user.is18()` delegate to `userMethods.is18` |
+| Object.create() | Key trick: sets prototype without copying methods     |
 
 ## **In Short**
 
@@ -1341,112 +1089,91 @@ If you want a follow-up comparing this to JavaScript classes (`class User { ... 
 
 ---
 
-# what is __proto__ and [[prototype]]  , are they same ? how to use it when to use it ?
+# what is **proto** and [[prototype]] , are they same ? how to use it when to use it ?
 
-In JavaScript, __proto__ and [[Prototype]] both relate to the prototype chain and inheritance, but they differ in their *role* and how they're accessed.
+In JavaScript, **proto** and [[Prototype]] both relate to the prototype chain and inheritance, but they differ in their _role_ and how they're accessed.
 
 ## [[Prototype]]: The Internal Link
 
-- **[[Prototype]]** is the *internal* hidden slot referencing the prototype object that any JS object inherits from.
+- **[[Prototype]]** is the _internal_ hidden slot referencing the prototype object that any JS object inherits from.
 - You **cannot** access [[Prototype]] directly in code—it's a specification/internal term.
 - All objects (except Object.create(null)) have a [[Prototype]] slot. The prototype chain lookup for methods/properties happens via this internal reference[^14_2][^14_5].
 
+## **proto**: The Public Accessor
 
-## __proto__: The Public Accessor
-
-- **__proto__** is a historical accessor property provided on most objects in browsers, allowing you to *get or set* an object's [[Prototype]] at runtime.
+- \***\*proto\*\*** is a historical accessor property provided on most objects in browsers, allowing you to _get or set_ an object's [[Prototype]] at runtime.
 - That is: `obj.__proto__` exposes the same value that is stored in the object's [[Prototype]] slot.
-- Modifying __proto__ (e.g. `obj.__proto__ = newProto`) changes the prototype chain for that object[^14_2][^14_5].
-- Today, **modifying __proto__ is discouraged**—use `Object.getPrototypeOf(obj)` and `Object.setPrototypeOf(obj, proto)` instead[^14_3][^14_4][^14_8].
-
+- Modifying **proto** (e.g. `obj.__proto__ = newProto`) changes the prototype chain for that object[^14_2][^14_5].
+- Today, **modifying **proto** is discouraged**—use `Object.getPrototypeOf(obj)` and `Object.setPrototypeOf(obj, proto)` instead[^14_3][^14_4][^14_8].
 
 ## Are They the Same?
 
 - **Conceptually, yes:** `obj.__proto__` gets or sets the object's [[Prototype]] slot[^14_2].
 - **But syntactically:**
-    - `[[Prototype]]` is an internal mechanism, not directly accessible.
-    - `__proto__` is a public property (now somewhat deprecated) that *exposes* [[Prototype]].
+  - `[[Prototype]]` is an internal mechanism, not directly accessible.
+  - `__proto__` is a public property (now somewhat deprecated) that _exposes_ [[Prototype]].
 - You can also use Object.create, Object.getPrototypeOf() and Object.setPrototypeOf() for the same tasks, with better cross-environment support[^14_3][^14_4].
-
 
 ## How and When to Use
 
 - **When inspecting or learning** the prototype chain:
-`obj.__proto__` (or better: `Object.getPrototypeOf(obj)`)
+  `obj.__proto__` (or better: `Object.getPrototypeOf(obj)`)
 - **When setting a new prototype at runtime:**
-Use `Object.setPrototypeOf(obj, newProto)` (not `obj.__proto__ = newProto`).
+  Use `Object.setPrototypeOf(obj, newProto)` (not `obj.__proto__ = newProto`).
 - **When creating objects with a specific prototype:**
-Use `Object.create(proto)`.
-
+  Use `Object.create(proto)`.
 
 ### Example
 
 ```js
-const proto = { sayHi() { console.log("Hi!"); } };
+const proto = {
+  sayHi() {
+    console.log("Hi!");
+  },
+};
 const obj = Object.create(proto);
 
 console.log(obj.__proto__ === proto); // true (for learning)
 console.log(Object.getPrototypeOf(obj) === proto); // true (recommended)
 ```
 
-
 ## ES6 Modern Practice
 
 - **Avoid using `__proto__`** directly in production code; rely on `Object.getPrototypeOf()` and `Object.setPrototypeOf()`[^14_3][^14_8].
 - `__proto__` survives mostly for browser legacy support and interactive debugging.
 
-
 ### Summary Table
 
-| Internal term | Property/exposure | Usage |
-| :-- | :-- | :-- |
-| [[Prototype]] | Hidden/engine-internal | Specifies actual prototype link |
-| __proto__ | Public accessor (legacy) | Gets/sets [[Prototype]] of object |
-| Object.getPrototypeOf | Modern function | Gets [[Prototype]] safely |
-| Object.setPrototypeOf | Modern function | Sets [[Prototype]] safely |
+| Internal term         | Property/exposure        | Usage                             |
+| :-------------------- | :----------------------- | :-------------------------------- |
+| [[Prototype]]         | Hidden/engine-internal   | Specifies actual prototype link   |
+| **proto**             | Public accessor (legacy) | Gets/sets [[Prototype]] of object |
+| Object.getPrototypeOf | Modern function          | Gets [[Prototype]] safely         |
+| Object.setPrototypeOf | Modern function          | Sets [[Prototype]] safely         |
 
 **In interviews:**
 Know that objects have a [[Prototype]] slot, which forms the inheritance chain. `__proto__` is a public getter/setter for this slot, but is now discouraged. Always prefer Object.getPrototypeOf()/Object.setPrototypeOf() in real code[^14_2][^14_3][^14_4][^14_8].
 
 <div style="text-align: center">⁂</div>
 
-[^14_1]: https://www.geeksforgeeks.org/javascript/difference-between-proto-and-prototype/
-
-[^14_2]: https://stackoverflow.com/questions/9959727/what-is-the-difference-between-prototype-and-proto
-
-[^14_3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
-
-[^14_4]: https://www.reddit.com/r/learnjavascript/comments/1926z4t/difference_between_proto_and_prototype/
-
-[^14_5]: https://coderwall.com/p/j1khtg/javascript-difference-between-__proto__-and-prototype
-
-[^14_6]: https://www.youtube.com/watch?v=ItvXrZXEFbM
-
-[^14_7]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain
-
-[^14_8]: https://javascript.info/prototype-methods
-
-
 ---
-
 
 # Prototype.
 
 📦 Key Concepts:
 
 1. Function’s Prototype Property
-Every JavaScript function (that you can call with new) has a prototype property:
+   Every JavaScript function (that you can call with new) has a prototype property:
 
-You’re absolutely right—there’s a distinction between the **prototype property of functions** and the **[[Prototype]]/__proto__ of objects**, and this often confuses learners!
+You’re absolutely right—there’s a distinction between the **prototype property of functions** and the **[[Prototype]]/**proto** of objects**, and this often confuses learners!
 
 Let’s clarify:
 
 ## **1. Function’s `prototype` Property**
 
 - Every JavaScript **function** (that can be used as a constructor with `new`) has a **`.prototype` property**.
-- This `prototype` property is *not* the prototype of the function itself! Instead:
-    - It’s the object that will become the **[[Prototype]]** (or `__proto__`) *of all instances created by that function*.
-
+- This `prototype` property is _not_ the prototype of the function itself! Instead:
+  - It’s the object that will become the **[[Prototype]]** (or `__proto__`) _of all instances created by that function_.
 
 ### **Example**
 
@@ -1455,10 +1182,10 @@ function Person(name) {
   this.name = name;
 }
 Person.prototype.sayHello = function () {
-  console.log('Hello, ' + this.name);
+  console.log("Hello, " + this.name);
 };
 
-const user = new Person('Suvojit');
+const user = new Person("Suvojit");
 // user.__proto__ === Person.prototype // true
 user.sayHello(); // "Hello, Suvojit"
 ```
@@ -1466,32 +1193,29 @@ user.sayHello(); // "Hello, Suvojit"
 - When you use `new Person('Suvojit')`, the created object’s internal prototype (`[[Prototype]]` or `__proto__`) is set to `Person.prototype`.
 - Any properties or methods you add to `Person.prototype` are shared by **all instances** of Person.
 
-
 ## **2. Objects and [[Prototype]]**
 
 - Every JavaScript object has an internal hidden property called **[[Prototype]]**.
 - For objects created by a constructor function (with `new`), **that [[Prototype]] is set to the constructor’s `.prototype` property**.
 
-
 ## **3. Purpose and Use**
 
 - **Function `.prototype`:** Used as a blueprint for all future instances of that function.
-    - Add shared methods/properties here for performance and consistency.
+  - Add shared methods/properties here for performance and consistency.
 - **Object’s [[Prototype]] (or `__proto__`):** Determines where inherited properties/methods are looked up.
-
 
 ## **Summary Table**
 
-| Term | Applies To | Purpose |
-| :-- | :-- | :-- |
-| `function.prototype` | Functions | Template for instances (constructor) |
-| `object.__proto__`/[[Prototype]] | Objects | Internal inheritance lookup chain |
+| Term                             | Applies To | Purpose                              |
+| :------------------------------- | :--------- | :----------------------------------- |
+| `function.prototype`             | Functions  | Template for instances (constructor) |
+| `object.__proto__`/[[Prototype]] | Objects    | Internal inheritance lookup chain    |
 
 ### **Key Interview Point**
 
 > **The `prototype` property on functions is how JavaScript sets up inheritance for objects created via `new`. It’s where shared behavior lives. The `[[Prototype]]`/`__proto__` is the actual object-based inheritance mechanism used at runtime.**
 
-Thank you for pointing out the key difference! Understanding *both* the function's `.prototype` and the object's `[[Prototype]]` is essential for mastering JavaScript inheritance. If you want a deep-dive into how they interact or how ES6 classes use prototypes under the hood, just ask!
+Thank you for pointing out the key difference! Understanding _both_ the function's `.prototype` and the object's `[[Prototype]]` is essential for mastering JavaScript inheritance. If you want a deep-dive into how they interact or how ES6 classes use prototypes under the hood, just ask!
 
 ---
 
@@ -1513,12 +1237,10 @@ The **new** keyword in JavaScript is used to create a new object instance from a
 - JavaScript creates a new, empty object in memory.
 - This object will eventually become the instance you are constructing[^17_1][^17_2][^17_5][^17_7].
 
-
 #### 2) **Sets the Prototype Link**
 
-- The new object's internal [[Prototype]] (its `__proto__`) is set to the *prototype property* of the constructor function/class.
+- The new object's internal [[Prototype]] (its `__proto__`) is set to the _prototype property_ of the constructor function/class.
 - This means any methods or properties defined on the constructor’s `.prototype` property are accessible to the new instance through the prototype chain[^17_2][^17_3][^17_5][^17_4].
-
 
 #### 3) **Binds `this` and Executes the Constructor**
 
@@ -1526,12 +1248,10 @@ The **new** keyword in JavaScript is used to create a new object instance from a
 - Any properties or side effects set with `this.property = value` inside the constructor are attached directly to this new instance.
 - Local variables (e.g., `let x = 2`) that are not assigned to `this` are not part of the new object[^17_2][^17_3][^17_6].
 
-
 #### 4) **Returns the New Object**
 
 - If the constructor returns an object explicitly (not `null` or a non-object), that object is returned.
 - Otherwise, JavaScript returns the newly created object from step 1[^17_2][^17_3][^17_4][^17_6].
-
 
 ### Visual Flow
 
@@ -1540,8 +1260,8 @@ function Person(name, age) {
   this.name = name;
   this.age = age;
 }
-Person.prototype.sayHi = function() { 
-  console.log("Hi, I'm " + this.name); 
+Person.prototype.sayHi = function () {
+  console.log("Hi, I'm " + this.name);
 };
 
 const user = new Person("Alice", 25);
@@ -1551,22 +1271,20 @@ user.sayHi(); // "Hi, I'm Alice"
 
 - `user.__proto__ === Person.prototype` // true
 
-
 ### Summary Table
 
-| Step | What it Does |
-| :-- | :-- |
-| Create object | Makes new empty object |
-| Set [[Prototype]] | Links object's `__proto__` to constructor's `.prototype` |
-| Bind `this` | Runs constructor with `this` bound to new object |
-| Return object | Returns the new object, unless constructor returns different object |
+| Step              | What it Does                                                        |
+| :---------------- | :------------------------------------------------------------------ |
+| Create object     | Makes new empty object                                              |
+| Set [[Prototype]] | Links object's `__proto__` to constructor's `.prototype`            |
+| Bind `this`       | Runs constructor with `this` bound to new object                    |
+| Return object     | Returns the new object, unless constructor returns different object |
 
 ### Why is `new` Important?
 
 - **Inheritance:** Sets up the prototype chain, so all created objects inherit methods and properties from the constructor’s prototype.
 - **Object Creation:** Simplifies creating multiple similar objects with shared behavior.
 - **Encapsulation:** Properties assigned to `this` only exist on that instance, while methods on the prototype are shared.
-
 
 ### In Short
 
@@ -1581,25 +1299,6 @@ The new keyword automates these steps:
 
 <div style="text-align: center">⁂</div>
 
-[^17_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
-
-[^17_2]: https://www.geeksforgeeks.org/javascript/javascript-new-keyword/
-
-[^17_3]: https://dev.to/muhtoyyib/what-is-the-new-keyword-in-javascript-5dn7
-
-[^17_4]: https://www.scaler.com/topics/javascript/new-keyword-in-javascript/
-
-[^17_5]: https://www.geeksforgeeks.org/javascript/what-is-the-new-keyword-in-javascript/
-
-[^17_6]: https://www.educative.io/answers/what-is-the-new-keyword-in-javascript
-
-[^17_7]: https://web.dev/learn/javascript/functions/new
-
-[^17_8]: https://www.w3schools.com/js/js_object_constructors.asp
-
-[^17_9]: https://wesbos.com/javascript/11-prototypes-this-new-and-inheritance/60-the-new-keyword
-
-
 ---
 
 # So in I got to know that in JavaScript the classes are fake. Acho. Because internally it is creating a prototype and then attaching with the proto. And everything is going on. So write smart Small description about this. But just it does.
@@ -1607,30 +1306,12 @@ The new keyword automates these steps:
 Yes, your understanding is correct: **JavaScript classes are syntactic sugar over prototypal inheritance**. When you declare a class in JavaScript, it does not create classical classes like in Java or C++—instead, it sets up prototypes and links instances via the prototype chain under the hood[^18_7][^18_1].
 
 **Smart Description:**
-> In JavaScript, the class keyword merely automates the creation of constructor functions and sets up the prototype chain to support inheritance. Internally, every class method is attached to the class’s prototype, and each object created from the class links its internal [[Prototype]] (or __proto__) to that prototype. There are no true classes—just objects and prototypes working together to share behavior and enable inheritance[^18_7][^18_1][^18_6].
+
+> In JavaScript, the class keyword merely automates the creation of constructor functions and sets up the prototype chain to support inheritance. Internally, every class method is attached to the class’s prototype, and each object created from the class links its internal [[Prototype]] (or **proto**) to that prototype. There are no true classes—just objects and prototypes working together to share behavior and enable inheritance[^18_7][^18_1][^18_6].
 
 This is why classes in JavaScript are often called “syntactic sugar”: they make code cleaner and easier to write, but everything is still built on prototypes and the prototype chain.
 
 <div style="text-align: center">⁂</div>
-
-[^18_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain
-
-[^18_2]: https://www.geeksforgeeks.org/javascript/understanding-the-prototype-chain-in-javascript/
-
-[^18_3]: https://www.w3schools.com/js/js_object_prototypes.asp
-
-[^18_4]: https://fireship.io/courses/js/102-prototype-chain/
-
-[^18_5]: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes
-
-[^18_6]: https://dev.to/jps27cse/understanding-prototype-inheritance-and-es6-classes-in-javascript-3ddl
-
-[^18_7]: https://www.dhiwise.com/post/prototype-chains-in-javascript-understanding-advanced-techniques
-
-[^18_8]: https://blog.risingstack.com/javascript-prototype-chain-inheritance/
-
-[^18_9]: https://ui.dev/javascript-inheritance-and-the-prototype-chain
-
 
 ---
 
@@ -1649,19 +1330,6 @@ JavaScript's class syntax only disguises the prototype-based nature of the langu
 
 <div style="text-align: center">⁂</div>
 
-[^19_1]: https://basescripts.com/understanding-es6-classes-in-javascript
-
-[^19_2]: https://www.reddit.com/r/javascript/comments/8q6267/why_are_js_classes_not_real_classes/
-
-[^19_3]: https://www.freecodecamp.org/news/how-to-use-classes-in-javascript-handbook/
-
-[^19_4]: https://stackoverflow.com/questions/27070783/js-classes-vs-classical-classes
-
-[^19_5]: https://devm.io/web-development/typescript-tips-ecmascript-regex
-
-[^19_6]: https://subscription.packtpub.com/book/web-development/9781789800104/1/ch01lvl1sec11/classes-and-modules
-
-
 ---
 
 # How does prototype creation happen when I declare a class in JS
@@ -1671,34 +1339,38 @@ When you declare a class in JavaScript, a special object called the **prototype*
 ### Step-by-Step: How Prototype Is Created When Declaring a Class
 
 1. **Class Declaration**:
-    - When you write a class (e.g., `class Person { ... }`), JavaScript creates a function (the class constructor) and, at the same time, a `Person.prototype` object[^20_1][^20_3].
+   - When you write a class (e.g., `class Person { ... }`), JavaScript creates a function (the class constructor) and, at the same time, a `Person.prototype` object[^20_1][^20_3].
 2. **Populating the Prototype**:
-    - All methods defined inside the class body (but not inside the constructor or as static methods) are assigned as properties on the class's `.prototype` object, not on individual instances[^20_3][^20_1].
-    - Example:
+   - All methods defined inside the class body (but not inside the constructor or as static methods) are assigned as properties on the class's `.prototype` object, not on individual instances[^20_3][^20_1].
+   - Example:
 
 ```javascript
 class Person {
-  sayHi() { console.log('Hi!'); }
+  sayHi() {
+    console.log("Hi!");
+  }
 }
 // Person.prototype.sayHi exists now
 ```
 
 3. **Instance Creation with new**:
-    - When you create an instance (e.g., `const p = new Person();`), JavaScript:
-        - Creates a blank object (`p`).
-        - Sets the object's internal `[[Prototype]]` (a.k.a. `__proto__`) to point to `Person.prototype`.
-        - Runs the constructor with `this` referring to the new object[^20_1][^20_3][^20_6].
-    - Result: `p.__proto__ === Person.prototype` is `true`.
+   - When you create an instance (e.g., `const p = new Person();`), JavaScript:
+     - Creates a blank object (`p`).
+     - Sets the object's internal `[[Prototype]]` (a.k.a. `__proto__`) to point to `Person.prototype`.
+     - Runs the constructor with `this` referring to the new object[^20_1][^20_3][^20_6].
+   - Result: `p.__proto__ === Person.prototype` is `true`.
 4. **Prototype Chain**:
-    - If you call `p.sayHi()`, JavaScript will:
-        - Look for `sayHi` directly on `p`.
-        - If not found, it follows the prototype chain to `Person.prototype`, where it will find and execute `sayHi`.
+   - If you call `p.sayHi()`, JavaScript will:
+     - Look for `sayHi` directly on `p`.
+     - If not found, it follows the prototype chain to `Person.prototype`, where it will find and execute `sayHi`.
 
 ### Visualized:
 
 ```javascript
 class Box {
-  getValue() { return 42; }
+  getValue() {
+    return 42;
+  }
 }
 
 const b = new Box();
@@ -1706,13 +1378,12 @@ const b = new Box();
 // Box.prototype has getValue()
 ```
 
-
 ### Summary Table
 
-| Action | What JavaScript Creates |
-| :-- | :-- |
-| Declares a class | Constructor function + associated `.prototype` |
-| Defines class method | Adds method to `.prototype`, not each instance |
+| Action                    | What JavaScript Creates                                  |
+| :------------------------ | :------------------------------------------------------- |
+| Declares a class          | Constructor function + associated `.prototype`           |
+| Defines class method      | Adds method to `.prototype`, not each instance           |
 | Creates instance with new | Links instance's `[[Prototype]]` to class's `.prototype` |
 
 ### Key Point
@@ -1722,27 +1393,6 @@ const b = new Box();
 For deeper learning, see MDN’s guides on prototype chains and using classes in JavaScript[^20_1][^20_8].
 
 <div style="text-align: center">⁂</div>
-
-[^20_1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain
-
-[^20_2]: https://www.w3schools.com/js/js_object_prototypes.asp
-
-[^20_3]: https://stackoverflow.com/questions/71812149/understanding-the-prototype-created-from-a-new-instance
-
-[^20_4]: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes
-
-[^20_5]: https://www.geeksforgeeks.org/javascript/how-does-javascript-prototype-work/
-
-[^20_6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
-
-[^20_7]: https://www.turing.com/kb/prototype-vs-class-in-js
-
-[^20_8]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes
-
-[^20_9]: https://trailhead.salesforce.com/content/learn/modules/javascript-essentials-salesforce-developers/work-with-obj-class-prototype
-
-
----
 
 ## The `super` Keyword in JavaScript
 
@@ -1778,7 +1428,6 @@ dog.speak();
 // Buddy barks
 ```
 
-
 ## Inheritance in JavaScript
 
 **Inheritance** allows a class to inherit properties and methods from another class using the `extends` keyword. The child class can override parent methods or add new functionality.
@@ -1811,7 +1460,6 @@ myCar.start();
 // Camry engine running
 ```
 
-
 ## Getter and Setter Methods
 
 **Getters** and **setters** allow you to define methods that are accessed like properties, providing controlled access to object data with validation or computed values.
@@ -1819,19 +1467,19 @@ myCar.start();
 ```javascript
 class Rectangle {
   constructor(width, height) {
-    this._width = width;  // Convention: _ indicates private
+    this._width = width; // Convention: _ indicates private
     this._height = height;
   }
-  
+
   // Getter
   get area() {
     return this._width * this._height;
   }
-  
+
   get width() {
     return this._width;
   }
-  
+
   // Setter with validation
   set width(value) {
     if (value > 0) {
@@ -1840,7 +1488,7 @@ class Rectangle {
       console.log("Width must be positive");
     }
   }
-  
+
   set height(value) {
     if (value > 0) {
       this._height = value;
@@ -1851,13 +1499,12 @@ class Rectangle {
 }
 
 const rect = new Rectangle(5, 10);
-console.log(rect.area);    // 50 (computed property)
-console.log(rect.width);   // 5
-rect.width = 8;           // Uses setter
-console.log(rect.area);    // 80
-rect.width = -2;          // "Width must be positive"
+console.log(rect.area); // 50 (computed property)
+console.log(rect.width); // 5
+rect.width = 8; // Uses setter
+console.log(rect.area); // 80
+rect.width = -2; // "Width must be positive"
 ```
-
 
 ## Static Methods and Properties
 
@@ -1870,40 +1517,39 @@ class MathHelper {
   static add(a, b) {
     return a + b;
   }
-  
+
   static multiply(a, b) {
     return a * b;
   }
-  
+
   static PI = 3.14159; // Static property
 }
 
 // Called on the class, not an instance
-console.log(MathHelper.add(5, 3));      // 8
+console.log(MathHelper.add(5, 3)); // 8
 console.log(MathHelper.multiply(4, 7)); // 28
-console.log(MathHelper.PI);             // 3.14159
+console.log(MathHelper.PI); // 3.14159
 
 // Cannot be called on instances
 const helper = new MathHelper();
 // helper.add(1, 2); // TypeError: helper.add is not a function
 ```
 
-
 ### Static Properties and Inheritance
 
 ```javascript
 class Counter {
   static count = 0;
-  
+
   constructor(name) {
     this.name = name;
     Counter.count++; // Increment class-level counter
   }
-  
+
   static getCount() {
     return Counter.count;
   }
-  
+
   static reset() {
     Counter.count = 0;
   }
@@ -1916,29 +1562,28 @@ Counter.reset();
 console.log(Counter.getCount()); // 0
 ```
 
-
 ## Comprehensive Example: Combining All Concepts
 
 ```javascript
 class Person {
   static population = 0;
-  
+
   constructor(firstName, lastName, age) {
     this._firstName = firstName;
     this._lastName = lastName;
     this._age = age;
     Person.population++;
   }
-  
+
   // Getter
   get fullName() {
     return `${this._firstName} ${this._lastName}`;
   }
-  
+
   get age() {
     return this._age;
   }
-  
+
   // Setter with validation
   set age(value) {
     if (value >= 0 && value <= 150) {
@@ -1947,12 +1592,12 @@ class Person {
       console.log("Invalid age");
     }
   }
-  
+
   // Static method
   static getPopulation() {
     return Person.population;
   }
-  
+
   speak() {
     console.log(`Hi, I'm ${this.fullName}`);
   }
@@ -1963,15 +1608,15 @@ class Student extends Person {
     super(firstName, lastName, age); // Call parent constructor
     this.studentId = studentId;
   }
-  
+
   speak() {
     super.speak(); // Call parent method
     console.log(`My student ID is ${this.studentId}`);
   }
-  
+
   // Static method in child class
   static createStudent(name, age, id) {
-    const [first, last] = name.split(' ');
+    const [first, last] = name.split(" ");
     return new Student(first, last, age, id);
   }
 }
@@ -1980,9 +1625,9 @@ class Student extends Person {
 const person = new Person("John", "Doe", 30);
 const student = new Student("Jane", "Smith", 20, "S12345");
 
-console.log(person.fullName);        // "John Doe"
-console.log(student.fullName);       // "Jane Smith"
-person.age = 31;                     // Uses setter
+console.log(person.fullName); // "John Doe"
+console.log(student.fullName); // "Jane Smith"
+person.age = 31; // Uses setter
 console.log(Person.getPopulation()); // 2
 
 student.speak();
@@ -1995,15 +1640,250 @@ const newStudent = Student.createStudent("Bob Wilson", 22, "S67890");
 console.log(Person.getPopulation()); // 3
 ```
 
-
 ## Summary Table
 
-| Concept | Purpose | Usage |
-| :-- | :-- | :-- |
-| **super** | Access parent class methods/constructor | `super()`, `super.methodName()` |
-| **extends** | Create inheritance between classes | `class Child extends Parent` |
-| **get/set** | Control property access with validation | `get prop()`, `set prop(value)` |
-| **static** | Class-level methods/properties | `static methodName()`, `static prop` |
+| Concept     | Purpose                                 | Usage                                |
+| :---------- | :-------------------------------------- | :----------------------------------- |
+| **super**   | Access parent class methods/constructor | `super()`, `super.methodName()`      |
+| **extends** | Create inheritance between classes      | `class Child extends Parent`         |
+| **get/set** | Control property access with validation | `get prop()`, `set prop(value)`      |
+| **static**  | Class-level methods/properties          | `static methodName()`, `static prop` |
 
 These features make JavaScript classes powerful for object-oriented programming, providing encapsulation, inheritance, and controlled access to data while maintaining the underlying prototype-based nature of the language.
 
+# Some topics which i missed before
+
+## 🔹 Nullish Coalescing (??)
+
+The ?? operator returns the right-hand side operand when the left-hand side is null or undefined.
+
+```JavaScript
+
+const name = null ?? "Anonymous";
+console.log(name); // "Anonymous"
+```
+
+> ✅ Use when you want to fallback only for null or undefined (not '' or 0).
+
+## 🔹 Custom Events
+
+Custom Events are user-defined events triggered manually using CustomEvent.
+
+```JavaScript
+const myEvent = new CustomEvent('greet', { detail: { name: "Suvojit" } });
+
+document.addEventListener('greet', (e) => {
+  console.log("Hello", e.detail.name);
+});
+
+document.dispatchEvent(myEvent);
+```
+
+> ✅ Use to create decoupled communication between modules/components.
+
+## 🔹 WeakMap
+
+Like Map, but keys must be objects and are weakly held (not prevent GC).
+
+Not iterable.
+
+```JavaScript
+
+let obj = {};
+const wm = new WeakMap();
+wm.set(obj, "private data");
+
+console.log(wm.get(obj)); // "private data"
+```
+
+> ✅ Good for private data in classes.
+
+## 🔹 WeakSet
+
+Like Set, but only stores objects, weakly.
+
+Not iterable.
+
+```JavaScript
+
+let user = {};
+const ws = new WeakSet();
+ws.add(user);
+console.log(ws.has(user)); // true
+```
+
+> ✅ Used for object tracking without memory leaks.
+
+## 🔹 Factory Functions vs Constructor Functions
+
+### 🏭 Factory Function:
+
+```JavaScript
+
+function createUser(name) {
+  return {
+    name,
+    greet() {
+      return `Hello ${name}`;
+    }
+  };
+}
+```
+
+### 🏗 Constructor Function:
+
+```JavaScript
+
+function User(name) {
+  this.name = name;
+  this.greet = function () {
+    return `Hello ${name}`;
+  };
+}
+const user = new User("Suvojit");
+```
+
+| Feature        | Factory Function | Constructor Function |
+| -------------- | ---------------- | -------------------- |
+| Return Object  | Explicit         | Implicit (`this`)    |
+| Uses `new`     | ❌               | ✅                   |
+| `this` binding | Not required     | Required             |
+
+## 🔹 Currying
+
+Transforming a function with multiple arguments into a series of functions that take one argument.
+
+```js
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+console.log(add(2)(3)); // 5
+```
+
+> ✅ Helps in function reuse and partial application.
+
+## 🔹 Memoization
+
+Storing the result of expensive function calls and returning cached result when same inputs occur again.
+
+```js
+function memoize(fn) {
+  const cache = {};
+  return function (n) {
+    if (n in cache) return cache[n];
+    return (cache[n] = fn(n));
+  };
+}
+
+const factorial = memoize(function (n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+});
+```
+
+> ✅ Great for performance optimization.
+
+### 🔹 Pure vs Impure Functions
+
+Pure Function:
+
+- Same output for same input
+
+- No side effects
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+Impure Function:
+
+- Changes external state or depends on it
+
+```js
+let count = 0;
+function increment() {
+  count++;
+}
+```
+
+> ✅ Prefer pure functions for predictability.
+
+## 🔹 Memory Management
+
+JavaScript automatically manages memory using Garbage Collection.
+
+Common memory issues:
+
+- Unused variables
+
+- Closures holding memory
+
+- Listeners not removed
+
+- Global variables
+
+### 🧠 Best Practices:
+
+- Null out large data after use
+
+- Remove event listeners
+
+- Avoid global scope pollution
+
+## 🔹 Garbage Collection
+
+Mechanisms:
+
+- Mark-and-Sweep: Objects not reachable are removed
+
+- Reference Counting (legacy)
+
+Example:
+
+```js
+let obj = { name: "X" };
+obj = null; // Ready for GC
+```
+
+> ✅ Make sure no references are holding memory unnecessarily.
+
+## 🔹 Debounce vs Throttle
+
+### 🔄 Debounce:
+
+- Waits for a pause in activity before running.
+
+```js
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+```
+
+> ✅ Use for input fields, resize events
+
+### ⏱ Throttle:
+
+- Runs function at most once every X ms.
+
+```js
+function throttle(fn, limit) {
+  let inThrottle;
+  return function (...args) {
+    if (!inThrottle) {
+      fn(...args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+```
+
+> ✅ Use for scroll, drag, resize handlers
