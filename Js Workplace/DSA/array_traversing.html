@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Traversion</title>
+    <script>
+      let data = [9, 4, 5, 8, 1, 2, 6, 6, 4, 7, 2, 4];
+    //   for (let index = 0; index < data.length; index++) {
+    //     document.write(`${data[index]}    `)
+        
+    //   }
+
+    function getElement(){
+        let e1=document.getElementById("element").value;
+        if (e1<data.length && e1>0 && typeof parseInt(e1)==="number") {
+            alert(data[e1]);
+        }else{
+            alert(`Enter valid value`);
+        }
+        // alert("function called")
+        
+    }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getElement()">Get element</button>
+
+  </body>
+</html>
